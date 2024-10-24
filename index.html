@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快递录入</title>
+    <style>
+        .number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid black;
+            background-color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .scanned {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="numbers"></div>
+
+    <script>
+        const container = document.getElementById('numbers');
+        for (let i = 1; i <= 200; i++) {
+            const number = document.createElement('div');
+            number.className = 'number';
+            number.textContent = i;
+            number.onclick = () => number.classList.toggle('scanned');
+            container.appendChild(number);
+        }
+    </script>
+</body>
+</html>
